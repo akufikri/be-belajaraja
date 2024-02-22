@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
 
 const registerUser = async (req, res) => {
       const { username, email, password } = req.body;
-
+      console.log("Received data:", req.body);
       try {
             const user = await User.register(username, email, password);
             // create token

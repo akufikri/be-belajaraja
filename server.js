@@ -9,12 +9,11 @@ app.use(express.json())
 // ================= CONFIG PACKAGES ========================//
 
 // CONNECTIONS
-mongoose.connect('mongodb://localhost:27017/belajaraja')
+mongoose.connect('mongodb+srv://gdc:23jLzhk2oYr0c9PE@belajaraja.ibkfhzp.mongodb.net/?retryWrites=true&w=majority&appName=belajarAja')
       .then(() => console.log('Connected to MongoDB'))
       .catch(err => console.error('Could not connect to MongoDB:', err));
+
 // CONNECTIONS
-
-
 // ================= CONFIG ROUTER ========================//
 const UserRouter = require('./routes/UserRouter')
 const CourseRouter = require('./routes/CourseRouter')
@@ -22,7 +21,7 @@ const CourseRouter = require('./routes/CourseRouter')
 app.use('/api/user', UserRouter)
 app.use('/api/course', CourseRouter)
 
-app.listen(3000, () => {
+app.listen(4000, () => {
       console.log("successfully connected")
 })
 
