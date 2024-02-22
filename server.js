@@ -6,14 +6,16 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// =================CONFIG PACKAGES========================//
+// ================= CONFIG PACKAGES ========================//
 
 // CONNECTIONS
-mongoose.connect('mongodb://localhost:27017/belajaraja');
+mongoose.connect('mongodb://localhost:27017/belajaraja')
+      .then(() => console.log('Connected to MongoDB'))
+      .catch(err => console.error('Could not connect to MongoDB:', err));
 // CONNECTIONS
 
 
-// =================CONFIG ROUTER========================//
+// ================= CONFIG ROUTER ========================//
 const UserRouter = require('./routes/UserRouter')
 const CourseRouter = require('./routes/CourseRouter')
 
