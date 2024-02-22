@@ -3,6 +3,8 @@ const router = express.Router()
 
 const CourseController = require('../controller/CourseController')
 
-router.get('/course', CourseController.get)
+router.post('/create', CourseController.createCourse)
+router.get('/get', CourseController.getCourse)
+router.get('/get/:id', CourseController.getCourseById)
 
 module.exports = router;
